@@ -1,10 +1,7 @@
 import { ApiParam, ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsString, IsNotEmpty, IsBoolean } from 'class-validator';
-export enum SelectedCapins {
-  Economy = 'W',
-  Business = 'C',
-  FirstClass = 'F',
-}
+import { SelectedCapins } from '../enums/selected-capins.enum';
+
 export class SearchFlightDto {
   @ApiProperty({ description: `` })
   fly_from: string;
