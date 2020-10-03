@@ -10,7 +10,7 @@ export function setupSwagger(app: INestApplication, env: string) {
   const options = new DocumentBuilder()
     .setTitle('API')
     .setVersion('0.0.1')
-    .addBearerAuth()
+    // .addBearerAuth()
     // .setSchemes(schema[env])
     .build();
 

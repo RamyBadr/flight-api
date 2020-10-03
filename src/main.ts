@@ -9,16 +9,8 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const port = configService.get('PORT');
   setupSwagger(app, configService.get('NODE_ENV'));
-  app.useGlobalPipes(
-    new ValidationPipe({
-      whitelist: true,
-      transform: true,
-      dismissDefaultMessages: true,
-      validationError: {
-        target: false,
-      },
-    }),
-  );
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
+  app.enableCors();
   await app.listen(port);
   Logger.log(`app started on port: ${port}`, 'Main');
 }
