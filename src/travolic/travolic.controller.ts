@@ -4,15 +4,15 @@ import { FlightSearchResponse } from './dtos/flight-search-response.dto';
 import { SearchFlightDto } from './dtos/search-flight.dto';
 import { TravolicService } from './travolic.service';
 
-@Controller('travolic')
+@Controller('api/search')
 export class TravolicController {
   constructor(private readonly _service: TravolicService) {}
 
   @ApiOkResponse({
     type: FlightSearchResponse,
-    description: 'Successfully created',
+    description: 'Flight Info Response',
   })
-  @Get('search')
+  @Get('travolic')
   search(@Query() params: SearchFlightDto): Promise<FlightSearchResponse> {
     return this._service.search(params);
   }
