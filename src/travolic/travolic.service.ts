@@ -36,7 +36,8 @@ export class TravolicService {
         {
           status: error.response.status,
           error: HttpStatus[error.response.status],
-          data: error.response.data.message,
+          flightsApiError: true,
+          message: error.response.data.message,
         },
         error.response.status,
       );
