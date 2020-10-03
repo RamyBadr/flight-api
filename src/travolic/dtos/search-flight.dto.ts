@@ -1,14 +1,24 @@
 import { ApiParam, ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsString, IsNotEmpty, IsBoolean } from 'class-validator';
+import { IsString, IsNotEmpty, IsBoolean, IsDateString } from 'class-validator';
 import { SelectedCapins } from '../enums/selected-capins.enum';
 
 export class SearchFlightDto {
   @ApiProperty({ description: `` })
+  @IsString()
+  @IsNotEmpty()
   fly_from: string;
+  @IsString()
+  @IsNotEmpty()
   @ApiProperty({})
   fly_to: string;
+  @IsString()
+  @IsNotEmpty()
+  @IsDateString()
   @ApiProperty({})
   date_from: string;
+  @IsString()
+  @IsDateString()
+  @IsNotEmpty()
   @ApiProperty({})
   date_to: string;
   @ApiPropertyOptional({})
