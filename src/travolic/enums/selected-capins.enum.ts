@@ -1,5 +1,6 @@
 export enum SelectedCapins {
-  Economy = 'W',
+  Economy = 'M',
+  EconomyPremium = 'W',
   Business = 'C',
   FirstClass = 'F',
 }
